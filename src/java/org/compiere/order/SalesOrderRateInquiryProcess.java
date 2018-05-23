@@ -23,6 +23,7 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 import org.compiere.crm.MClientInfo;
+import org.compiere.model.IProcessInfoParameter;
 import org.compiere.product.MProduct;
 import org.compiere.product.MUOM;
 import org.idempiere.common.exceptions.AdempiereException;
@@ -45,7 +46,7 @@ public class SalesOrderRateInquiryProcess extends SvrProcess
 	@Override
 	protected void prepare() 
 	{
-		ProcessInfoParameter[] para = getParameter();
+		IProcessInfoParameter[] para = getParameter();
 		for (int i = 0; i < para.length; i++)
 		{
 			String name = para[i].getParameterName();

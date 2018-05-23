@@ -280,7 +280,7 @@ public class StandardTaxProvider implements ITaxProvider {
 		return no == 1;
 	}
 
-	public String validateConnection(I_C_TaxProvider provider, ProcessInfo pi) throws Exception {
+	public String validateConnection(I_C_TaxProvider provider, IProcessInfo pi) throws Exception {
 		throw new IllegalStateException(Msg.getMsg(provider.getCtx(), "ActionNotSupported"));
 	}
 }
