@@ -1,3 +1,5 @@
+package org.compiere.order.test
+
 import org.compiere.order.MOrder
 import org.compiere.orm.DefaultModelFactory
 import org.compiere.orm.IModelFactory
@@ -8,18 +10,19 @@ import org.idempiere.common.util.DB
 import org.idempiere.common.util.Env
 import org.idempiere.common.util.Ini
 import org.junit.Test
-import pg.org.compiere.db.DB_PostgreSQL
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 
 class OrderTests {
     @Test
     fun getUsingDefaultModelFactoryById() {
+        DummyService.setup()
+        DummyEventManager.setup()
         Ini.getIni().isClient = false
         CLogger.getCLogger(OrderTests::class.java)
         Ini.getIni().properties
         val db = Database()
-        db.setDatabase(DB_PostgreSQL())
+        db.setDatabase(DatabaseImpl())
         DB.setDBTarget(CConnection.get(null))
         DB.isConnected()
 
